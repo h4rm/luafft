@@ -1,0 +1,13 @@
+LuaFFT
+--------
+
+1.1 Beta [Dec.2011]
+======================
+* Added assert msg if input data has not the correct size
+* Now fft also takes number values as input. It automatically translates them into complex numbers.
+* Changed example to a simple audio fft with frequencies.
+
+
+1.0 Beta [Jan.2011]
+======================
+* Initial first version with single luafft function.

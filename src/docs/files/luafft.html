@@ -1,0 +1,562 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="../luadoc.css" type="text/css" />
+	<!--meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/-->
+</head>
+
+<body>
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+<div id="main">
+
+<div id="navigation">
+
+
+<h1>LuaDoc</h1>
+<ul>
+	
+	<li><a href="../index.html">Index</a></li>
+	
+</ul>
+
+
+<!-- Module list -->
+
+
+
+<!-- File list -->
+
+<h1>Files</h1>
+<ul>
+
+	<li><strong>luafft.lua</strong></li>
+	
+</ul>
+
+
+
+
+
+
+</div> <!-- id="navigation" -->
+
+<div id="content">
+
+<h1>File <code>luafft.lua</code></h1>
+
+
+
+
+
+
+
+<h2>Functions</h2>
+<table class="function_list">
+
+	<tr>
+	<td class="name" nowrap><a href="#butterfly2">butterfly2</a>&nbsp;(input, out_index, fstride, twiddles, m, inverse)</td>
+	<td class="summary">Carries out a butterfly 2 run of the input sample.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#butterfly3">butterfly3</a>&nbsp;(input, out_index, fstride, twiddles, m, inverse)</td>
+	<td class="summary">Carries out a butterfly 3 run of the input sample.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#butterfly4">butterfly4</a>&nbsp;(input, out_index, fstride, twiddles, m, inverse)</td>
+	<td class="summary">Carries out a butterfly 4 run of the input sample.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#butterfly5">butterfly5</a>&nbsp;(input, out_index, fstride, twiddles, m, inverse)</td>
+	<td class="summary">Carries out a butterfly 5 run of the input sample.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#butterfly_generic">butterfly_generic</a>&nbsp;(input, out_index, fstride, twiddles, m, p, inverse)</td>
+	<td class="summary">Carries out a generic butterfly run of the input sample.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#calculate_factors">calculate_factors</a>&nbsp;(num_points)</td>
+	<td class="summary">devides a number into a sequence of factors  </td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#fft">fft</a>&nbsp;(input, inverse)</td>
+	<td class="summary">Calculates the Fast Fourier Transformation of the given input  </td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#next_fast_size">next_fast_size</a>&nbsp;(n)</td>
+	<td class="summary">Returns the next fast size  </td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#print_list">print_list</a>&nbsp;(list)</td>
+	<td class="summary">Short helper function that provides an easy way to print a list with values.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#work">work</a>&nbsp;(input, output, out_index, f, factors, factors_index, twiddles, fstride, in_stride, inverse)</td>
+	<td class="summary">The essential work function that performs the FFT  </td>
+	</tr>
+
+</table>
+
+
+
+
+
+
+<br/>
+<br/>
+
+
+
+
+<h2><a name="functions"></a>Functions</h2>
+<dl class="function">
+
+
+
+<dt><a name="butterfly2"></a><strong>butterfly2</strong>&nbsp;(input, out_index, fstride, twiddles, m, inverse)</dt>
+<dd>
+Carries out a butterfly 2 run of the input sample. 
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>input</em></code>: 
+	</li>
+	
+	<li>
+	  <code><em>out_index</em></code>: 
+	</li>
+	
+	<li>
+	  <code><em>fstride</em></code>: 
+	</li>
+	
+	<li>
+	  <code><em>twiddles</em></code>: 
+	</li>
+	
+	<li>
+	  <code><em>m</em></code>: 
+	</li>
+	
+	<li>
+	  <code><em>inverse</em></code>: 
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="butterfly3"></a><strong>butterfly3</strong>&nbsp;(input, out_index, fstride, twiddles, m, inverse)</dt>
+<dd>
+Carries out a butterfly 3 run of the input sample. 
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>input</em></code>: 
+	</li>
+	
+	<li>
+	  <code><em>out_index</em></code>: 
+	</li>
+	
+	<li>
+	  <code><em>fstride</em></code>: 
+	</li>
+	
+	<li>
+	  <code><em>twiddles</em></code>: 
+	</li>
+	
+	<li>
+	  <code><em>m</em></code>: 
+	</li>
+	
+	<li>
+	  <code><em>inverse</em></code>: 
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="butterfly4"></a><strong>butterfly4</strong>&nbsp;(input, out_index, fstride, twiddles, m, inverse)</dt>
+<dd>
+Carries out a butterfly 4 run of the input sample. 
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>input</em></code>: 
+	</li>
+	
+	<li>
+	  <code><em>out_index</em></code>: 
+	</li>
+	
+	<li>
+	  <code><em>fstride</em></code>: 
+	</li>
+	
+	<li>
+	  <code><em>twiddles</em></code>: 
+	</li>
+	
+	<li>
+	  <code><em>m</em></code>: 
+	</li>
+	
+	<li>
+	  <code><em>inverse</em></code>: 
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="butterfly5"></a><strong>butterfly5</strong>&nbsp;(input, out_index, fstride, twiddles, m, inverse)</dt>
+<dd>
+Carries out a butterfly 5 run of the input sample. 
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>input</em></code>: 
+	</li>
+	
+	<li>
+	  <code><em>out_index</em></code>: 
+	</li>
+	
+	<li>
+	  <code><em>fstride</em></code>: 
+	</li>
+	
+	<li>
+	  <code><em>twiddles</em></code>: 
+	</li>
+	
+	<li>
+	  <code><em>m</em></code>: 
+	</li>
+	
+	<li>
+	  <code><em>inverse</em></code>: 
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="butterfly_generic"></a><strong>butterfly_generic</strong>&nbsp;(input, out_index, fstride, twiddles, m, p, inverse)</dt>
+<dd>
+Carries out a generic butterfly run of the input sample. 
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>input</em></code>: 
+	</li>
+	
+	<li>
+	  <code><em>out_index</em></code>: 
+	</li>
+	
+	<li>
+	  <code><em>fstride</em></code>: 
+	</li>
+	
+	<li>
+	  <code><em>twiddles</em></code>: 
+	</li>
+	
+	<li>
+	  <code><em>m</em></code>: 
+	</li>
+	
+	<li>
+	  <code><em>p</em></code>: 
+	</li>
+	
+	<li>
+	  <code><em>inverse</em></code>: 
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="calculate_factors"></a><strong>calculate_factors</strong>&nbsp;(num_points)</dt>
+<dd>
+devides a number into a sequence of factors 
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>num_points</em></code>: Number of points that are used. 
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+<ul>Returns a list with the factors </ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="fft"></a><strong>fft</strong>&nbsp;(input, inverse)</dt>
+<dd>
+Calculates the Fast Fourier Transformation of the given input 
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>input</em></code>: A set of points that will be transformed. At this point, the input has to be a list of complex numbers, according to the format in complex.lua.
+	</li>
+	
+	<li>
+	  <code><em>inverse</em></code>: Boolean that controls whether a transformation or inverse transformation will be carried out.
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+<ul>Returns a list of complex numbers with the same size as the input list. Contains the fourier transformation of the input. </ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="next_fast_size"></a><strong>next_fast_size</strong>&nbsp;(n)</dt>
+<dd>
+Returns the next fast size 
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>n</em></code>: Size 
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+<ul>Next fast size.</ul>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="print_list"></a><strong>print_list</strong>&nbsp;(list)</dt>
+<dd>
+Short helper function that provides an easy way to print a list with values. 
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>list</em></code>: 
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="work"></a><strong>work</strong>&nbsp;(input, output, out_index, f, factors, factors_index, twiddles, fstride, in_stride, inverse)</dt>
+<dd>
+The essential work function that performs the FFT 
+
+
+<h3>Parameters:</h3>
+<ul>
+	
+	<li>
+	  <code><em>input</em></code>: 
+	</li>
+	
+	<li>
+	  <code><em>output</em></code>: 
+	</li>
+	
+	<li>
+	  <code><em>out_index</em></code>: 
+	</li>
+	
+	<li>
+	  <code><em>f</em></code>: 
+	</li>
+	
+	<li>
+	  <code><em>factors</em></code>: 
+	</li>
+	
+	<li>
+	  <code><em>factors_index</em></code>: 
+	</li>
+	
+	<li>
+	  <code><em>twiddles</em></code>: 
+	</li>
+	
+	<li>
+	  <code><em>fstride</em></code>: 
+	</li>
+	
+	<li>
+	  <code><em>in_stride</em></code>: 
+	</li>
+	
+	<li>
+	  <code><em>inverse</em></code>: 
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+
+</dd>
+
+
+</dl>
+
+
+
+
+
+
+
+</div> <!-- id="content" -->
+
+</div> <!-- id="main" -->
+
+<div id="about">
+	<p><a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0!" height="31" width="88" /></a></p>
+</div> <!-- id="about" -->
+
+</div> <!-- id="container" -->	
+</body>
+</html>
