@@ -1,3 +1,6 @@
-LuaFFT is an easy to use Fast Fourier Transformation package.
+LuaFFT is an easy to use Fast Fourier Transformation package in pure Lua. It is based on the FFT implementation of KissFFT by Mark Borgerding which is both easy to use and extremly fast.
+
+Please look at the /example directory for usage information.
+
 It runs under the MIT license.
 This is version 1.1-1.
