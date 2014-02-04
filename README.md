@@ -14,7 +14,9 @@ luarocks install luafft
 
 or simply use Git:
 
-`git clone git://github.com/vection/LuaFFT.git`
+```
+git clone git://github.com/vection/LuaFFT.git
+```
 
 # Usage
 
