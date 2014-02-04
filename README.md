@@ -2,6 +2,8 @@
 
 **luafft** is an easy to use Fast Fourier Transformation package in pure Lua. It is based on the FFT implementation of KissFFT by Mark Borgerding which is both easy to use and extremly fast. It also uses the complex number module from the Numeric Lua package.
 
+_Note: This is a very early version of the code. Although the algorithm has been thoroughly tested by Mark Borgerding, there may very well be bugs that have not been found yet. Please feel free to comment on any source code related problems._
+
 # Installation
 
 LuaFFT is part of the LuaRocks repository where it can be easily installed by using:
