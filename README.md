@@ -8,7 +8,9 @@ _Note: This is a very early version of the code. Although the algorithm has been
 
 LuaFFT is part of the LuaRocks repository where it can be easily installed by using:
 
-`luarocks install luafft`
+```
+luarocks install luafft
+```
 
 or simply use Git:
 
