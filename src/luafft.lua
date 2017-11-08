@@ -28,14 +28,12 @@ complex = require "complex"
 ---------------------------------------------------------------
 --This is a lua port of the KissFFT Library by Mark Borgerding
 --It provides a simple function to carry out a fast fourier transformation (FFT).
---
---module("LuaFFT", package.seeall)
 
+local luafft = {}
 local cos,sin = math.cos,math.sin
+local debugging = false
 
-debugging = false
-
-function msg(...)
+local function msg(...)
 	if debugging == true then
 		print(...)
 	end
@@ -47,7 +45,7 @@ end
 --@param n	Size
 --
 --@return	Next fast size.
-function next_possible_size(n)
+local function next_possible_size(n)
   local m = n
   while (1) do
     m = n
@@ -71,7 +69,7 @@ end
 --@return			Returns a list of complex numbers with the same size
 --					as the input list. Contains the fourier transformation of the input.
 ---------------------------------------------------------------
-function fft(input, inverse)
+function luafft.fft(input, inverse)
 	--the size of input defines the number of total points
 	local num_points = #input
 
@@ -97,9 +95,8 @@ end
 --
 
 ---------------------------------------------------------------
-function fftr(input, inverse)
-
-
+function luafft.fftr(input, inverse)
+	print("Not implemented.")
 end
 
 
@@ -358,3 +355,5 @@ function butterfly_generic(input,out_index, fstride, twiddles, m, p, inverse )
 		end
 	end
 end
+
+return luafft
