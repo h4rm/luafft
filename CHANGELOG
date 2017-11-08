@@ -1,6 +1,10 @@
 LuaFFT
 --------
 
+1.2 Beta [Nov.2017]
+======================
+* Minor change to upgrade to lua 5.2
+
 1.1 Beta [Dec.2011]
 ======================
 * Added assert msg if input data has not the correct size
