@@ -66,4 +66,3 @@ compare(list2,ret)
 
 # Licence and Version
 **luafft** is licensed under the same license as Lua -- the MIT license -- and so can be freely used for academic and commercial purposes.
-This is version 1.1-1.
