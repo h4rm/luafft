@@ -1,7 +1,8 @@
 package = "LuaFFT"
 version = "1.2-1"
 source = {
-   url = "https://github.com/h4rm/luafft/releases/luafft-1.2-1.zip"
+  url = "git://github.com/h4rm/luafft",
+  tag = "v1.2",
 }
 description = {
    summary = "Lua package that includes functions for Fast Fourier Transformations.",
