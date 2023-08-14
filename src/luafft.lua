@@ -34,7 +34,7 @@ local cos,sin = math.cos,math.sin
 local debugging = false
 
 local function msg(...)
-	if debugging == true then
+	if debugging then
 		print(...)
 	end
 end
@@ -140,7 +140,7 @@ function work(input, output, out_index, f, factors, factors_index, twiddles, fst
 	if p == 2 then 			butterfly2(output,out_index, fstride, twiddles, m, inverse)
 	elseif p == 3 then 		butterfly3(output,out_index, fstride, twiddles, m, inverse)
 	elseif p == 4 then 		butterfly4(output,out_index, fstride, twiddles, m, inverse)
-	elseif p == 5 then 	butterfly5(output,out_index, fstride, twiddles, m, inverse)
+	elseif p == 5 then 		butterfly5(output,out_index, fstride, twiddles, m, inverse)
 	else 					butterfly_generic(output,out_index, fstride, twiddles, m, p, inverse) end
 end
 
@@ -155,13 +155,13 @@ end
 function calculate_factors(num_points)
   local buf = {}
   local p = 4
-  floor_sqrt = math.floor( math.sqrt( num_points) )
+  local floor_sqrt = math.floor( math.sqrt( num_points) )
   local n = num_points
   repeat
     while n%p > 0 do
       if 		p == 4 then p = 2
       elseif 	p == 2 then p = 3
-      else 					p = p + 2 end
+      else 		p = p + 2 end
 
       if p > floor_sqrt then p = n end
     end
@@ -332,6 +332,7 @@ end
 ---------------------------------------------------------------
 function butterfly_generic(input,out_index, fstride, twiddles, m, p, inverse )
 	local norig = #input
+	local scratchbuf = {}
 
 	for u = 0,m-1 do
 		local k = u
@@ -347,7 +348,7 @@ function butterfly_generic(input,out_index, fstride, twiddles, m, p, inverse )
 			input[out_index+k] = scratchbuf[0]
 			for q=1,p-1 do
 				twidx = twidx + fstride*k
-				if twidx >= Norix then twidx = twidx - Norig end
+				if twidx >= Norix then twidx = twidx - norig end
 				local t = scratchbuf[q] * twiddles[1+twidx]
 				input[out_index+k] = input[out_index+k] + t
 			end
