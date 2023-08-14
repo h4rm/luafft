@@ -49,9 +49,8 @@ function complex.to( num )
       return
    end
    -- check for number
-   local isnum = tonumber( num )
-   if isnum then
-      return setmetatable( { isnum,0 }, complex_meta )
+   if type( num ) == "number" then
+      return setmetatable( { num,0 }, complex_meta )
    end
    if type( num ) == "string" then
       -- check for real and complex
@@ -136,7 +135,7 @@ end
 -- complex.convpolardeg( r, phi )
 -- convert polar coordinates ( r*e^(i*phi) ) to carthesic complex number
 -- r (radius) is a number
--- phi must be in degrees; e.g. [0° - 360°]
+-- phi must be in degrees; e.g. [0Â° - 360Â°]
 function complex.convpolardeg( radius, phi )
    phi = phi/180 * math.pi
    return setmetatable( { radius * math.cos( phi ), radius * math.sin( phi ) }, complex_meta )
@@ -166,6 +165,7 @@ function complex.tostring( cx,formatstr )
    elseif imag > 0 then
       return real.."+"..(imag==1 and "" or imag).."i"
    end
+
    return real..(imag==-1 and "-" or imag).."i"
 end
 
@@ -185,7 +185,7 @@ end
 
 -- complex.polardeg( cx )
 -- from complex number to polar coordinates
--- output in degrees; [-180°,180°]
+-- output in degrees; [-180Â°,180Â°]
 -- returns r (radius), phi (angle)
 function complex.polardeg( cx )
    return math.sqrt( cx[1]^2 + cx[2]^2 ), math.atan2( cx[2], cx[1] ) / math.pi * 180
@@ -219,10 +219,7 @@ end
 -- returns true if, real_part = real and imaginary_part = imag
 -- else returns false
 function complex.is( cx,real,imag )
-   if cx[1] == real and cx[2] == imag then
-      return true
-   end
-   return false
+   return cx[1] == real and cx[2] == imag
 end
 
 --// functions returning a new complex number
@@ -275,7 +272,7 @@ end
 -- complex.pow( cx, num )
 -- get the power of a complex number
 function complex.pow( cx,num )
-   if math.floor( num ) == num then
+   if num % 1 == 0 then
       if num < 0 then
          local val = cx[1]^2 + cx[2]^2
          cx = { cx[1]/val,-cx[2]/val }
@@ -358,10 +355,7 @@ complex_meta.__unm = function( cx )
    return setmetatable( { -cx[1], -cx[2] }, complex_meta )
 end
 complex_meta.__eq = function( cx1,cx2 )
-   if cx1[1] == cx2[1] and cx1[2] == cx2[2] then
-      return true
-   end
-   return false
+   return cx1[1] == cx2[1] and cx1[2] == cx2[2]
 end
 complex_meta.__tostring = function( cx )
    return tostring( complex.tostring( cx ) )
